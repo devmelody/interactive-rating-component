@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>Thank You Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: hsl(216, 12%, 8%);
+            font-family: 'Overpass', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 420px;
+            background-color: hsl(213, 19%, 18%);
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .thanks-icon {
+            margin-top: 50px;
+        }
+
+        .selection {
+            display: inline-block;
+            color: hsl(25, 97%, 53%, 0.7);
+            background-color: hsla(217, 12%, 63%, 0.1);
+            border-radius: 25px;
+            padding: 10px 5px;
+            margin-top: 2rem;
+            width: 250px;
+        }
+
+        .heading {
+            color: white;
+            margin-top: 1rem;
+        }
+
+        .greeting {
+            margin-bottom: 3rem;
+        }
+        .greeting > p {
+            color: hsl(217, 12%, 63%);
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <div class="card-body">
+            <img class="thanks-icon" src="images/illustration-thank-you.svg">
+            <p class="selection">You selected <span id="selected-rating"></span> out of 5</p>
+
+        </div>
+        <div class="greeting">
+            <h1 class="heading">Thank you!</h1>
+            <p>We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!</p>
+        </div>
+    </main>
+    
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const rating = localStorage.getItem("selectedRating");
+    const ratingSpan = document.getElementById("selected-rating");
+
+    if (rating && ratingSpan) {
+      ratingSpan.textContent = rating;
+    }
+  });
+</script>
+</body>
+
+</html>
